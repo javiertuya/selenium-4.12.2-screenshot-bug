@@ -16,7 +16,7 @@ namespace Giis.Samples.Selema.Mstest2
             IWebDriver driver = new ChromeDriver(opt);
             driver.Navigate().GoToUrl("https://www.selenium.dev/");
             Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
-            ss.SaveAsFile("../../../../screenshot.jpg", ScreenshotImageFormat.Jpeg);
+            ss.SaveAsFile("../../../../screenshot.png", ScreenshotImageFormat.Png);
             driver.Close();
         }
     }

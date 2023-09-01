@@ -13,6 +13,7 @@ jobs:
       - name: NET - Build and test
         run: dotnet test --logger "trx;LogFileName=../../test-result.trx"
       - name: Show files created
+        if: always()
         run: ls -la
       - name: Publish test report files
         if: always()
