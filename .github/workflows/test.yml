@@ -13,6 +13,7 @@ jobs:
       - name: NET - Build and test
         run: dotnet test --logger "trx;LogFileName=../../test-result.trx"
       - name: Publish test report files
+        if: always()
         uses: actions/upload-artifact@v3.1.2
         with:
           name: "test-report-files"
