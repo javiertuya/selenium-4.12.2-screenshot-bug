@@ -1,0 +1,21 @@
+name: test-all
+on:
+  push:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-dotnet@v3.2.0
+        with:
+            dotnet-version: '6.0.x'
+
+      - name: NET - Build and test
+        run: dotnet test --logger "trx;LogFileName=../../test-result.trx"
+      - name: Publish test report files
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: "test-report-files"
+          path: |
+            *.png
+            *.trx
