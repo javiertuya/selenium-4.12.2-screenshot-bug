@@ -4,5 +4,6 @@ obj
 TestResults
 reports
 *.png
+*.jpg
 *.trx
 
